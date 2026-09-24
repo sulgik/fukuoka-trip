@@ -17,6 +17,7 @@ a{color:#1d5c86;text-decoration:none}.wrap{max-width:980px;margin:auto;padding:1
 .hero{background:linear-gradient(135deg,#1e3448,#3b6079);color:#fff;border-radius:24px;padding:28px 24px}
 .hero h1{margin:0 0 10px;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.15}.hero p{margin:4px 0;color:#e8eef3}
 .pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.pill{border:1px solid #ffffff55;border-radius:999px;padding:6px 10px;font-size:.85rem}
+.profile-picker{display:flex;gap:8px;overflow:auto;margin:12px 0 8px}.profile-btn{appearance:none;border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:#fff;color:var(--ink);font:inherit;font-size:.88rem;white-space:nowrap;cursor:pointer}.profile-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.profile-panel{display:none}.profile-panel.active{display:block}
 .sticky{position:sticky;top:0;z-index:20;background:#f4f1ebef;backdrop-filter:blur(10px);padding:8px 0;margin:10px 0}
 .nav{display:flex;gap:7px;overflow:auto}.nav a{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 11px;color:var(--ink);font-size:.86rem}
 .sec{background:var(--paper);border:1px solid var(--line);border-radius:19px;padding:20px;margin-top:15px}
@@ -46,6 +47,12 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 <span class="pill">빅카메라</span><span class="pill">이치란</span><span class="pill">무리 없는 첫날</span>
 </div>
 </header>
+
+<div class="profile-picker" aria-label="프로필 선택">
+<button class="profile-btn active" type="button" data-profile-target="mom">엄마</button>
+<button class="profile-btn" type="button" data-profile-target="wani">와니</button>
+<button class="profile-btn" type="button" data-profile-target="dad">아빠</button>
+</div>
 
 <div class="sticky"><nav class="nav">
 <a href="#flow">시간표</a><a href="#people">역할별 일정</a><a href="#osmo">오즈모 P4</a><a href="#places">지도</a><a href="#cards">교통카드</a><a href="#food">저녁</a><a href="#backup">플랜B</a>
@@ -163,12 +170,10 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 </section>
 
 <section class="sec" id="people">
-<h2>👨‍👩‍👦 역할별 일정 · 각자 할 일과 쇼핑</h2>
-<div class="grid">
-  <div class="card"><h3>엄마</h3><div class="muted">첫날에는 HAYAKAKEN 준비 후 가족 동선과 컨디션을 함께 확인.</div><h4>쇼핑리스트 · 캐널시티 Alpen</h4><label class="check"><input type="checkbox" data-save><span>수영복·래시가드</span></label><label class="check"><input type="checkbox" data-save><span>수경·수모</span></label><label class="check"><input type="checkbox" data-save><span>수영용 타월·방수 파우치</span></label><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alpen+Fukuoka+Canal+City">Alpen FUKUOKA 지도</a></div></div>
-  <div class="card"><h3>아이들</h3><div class="muted">토·일에는 초등학생 100엔 패스로 지하철 이동. 이동 중에는 다음 장소·간식·휴식 시간을 함께 고르기.</div><h4>할 일</h4><label class="check"><input type="checkbox" data-save><span>100엔 패스 잘 보관하기</span></label><label class="check"><input type="checkbox" data-save><span>PayPay돔·야구 체험 후보 확인</span></label></div>
-  <div class="card"><h3>아빠</h3><div class="muted">빅카메라에서 Osmo Pocket 4 재고·면세 최종가 확인. 없으면 요도바시 하카타로 전환.</div><h4>쇼핑리스트 · 기능성 의류</h4><label class="check"><input type="checkbox" data-save><span>컨버터블 팬츠</span></label><label class="check"><input type="checkbox" data-save><span>패커블 패딩</span></label><label class="check"><input type="checkbox" data-save><span>패커블 아우터</span></label><h4>쇼핑리스트 · 아이·아빠 야구용품</h4><label class="check"><input type="checkbox" data-save><span>아이 야구용품</span></label><label class="check"><input type="checkbox" data-save><span>아빠 야구용품</span></label><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alpen+Fukuoka+Canal+City">Alpen FUKUOKA 지도</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=BOOKOFF+SUPER+BAZAAR+Mina+Tenjin">중고 탐색 지도</a></div></div>
-</div>
+<h2>👤 내 일정 · 내 쇼핑리스트</h2>
+<div class="profile-panel active" data-profile-panel="mom"><h3>엄마</h3><div class="muted">첫날에는 HAYAKAKEN 준비 후 가족 동선과 컨디션을 함께 확인.</div><h3>쇼핑리스트 · 캐널시티 Alpen</h3><label class="check"><input type="checkbox" data-save><span>수영복·래시가드</span></label><label class="check"><input type="checkbox" data-save><span>수경·수모</span></label><label class="check"><input type="checkbox" data-save><span>수영용 타월·방수 파우치</span></label><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alpen+Fukuoka+Canal+City">Alpen FUKUOKA 지도</a></div></div>
+<div class="profile-panel" data-profile-panel="wani"><h3>와니</h3><div class="muted">토·일에는 초등학생 100엔 패스로 지하철 이동. 이동 중에는 다음 장소·간식·휴식 시간을 함께 고르기.</div><h3>내 할 일</h3><label class="check"><input type="checkbox" data-save><span>100엔 패스 잘 보관하기</span></label><label class="check"><input type="checkbox" data-save><span>PayPay돔·야구 체험 후보 확인</span></label></div>
+<div class="profile-panel" data-profile-panel="dad"><h3>아빠</h3><div class="muted">빅카메라에서 Osmo Pocket 4 재고·면세 최종가 확인. 없으면 요도바시 하카타로 전환.</div><h3>쇼핑리스트 · 기능성 의류</h3><label class="check"><input type="checkbox" data-save><span>컨버터블 팬츠</span></label><label class="check"><input type="checkbox" data-save><span>패커블 패딩</span></label><label class="check"><input type="checkbox" data-save><span>패커블 아우터</span></label><h3>쇼핑리스트 · 와니·아빠 야구용품</h3><label class="check"><input type="checkbox" data-save><span>와니 야구용품</span></label><label class="check"><input type="checkbox" data-save><span>아빠 야구용품</span></label><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alpen+Fukuoka+Canal+City">Alpen FUKUOKA 지도</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=BOOKOFF+SUPER+BAZAAR+Mina+Tenjin">중고 탐색 지도</a></div></div>
 </section>
 
 <section class="sec" id="places">
@@ -261,6 +266,13 @@ document.querySelectorAll('[data-save]').forEach((el,i)=>{
  const k='fukuoka-sat-v5-'+i;
  el.checked=localStorage.getItem(k)==='1';
  el.addEventListener('change',()=>localStorage.setItem(k,el.checked?'1':'0'));
+});
+document.querySelectorAll('[data-profile-target]').forEach((button)=>{
+ button.addEventListener('click',()=>{
+  const profile=button.dataset.profileTarget;
+  document.querySelectorAll('[data-profile-target]').forEach((item)=>item.classList.toggle('active',item===button));
+  document.querySelectorAll('[data-profile-panel]').forEach((panel)=>panel.classList.toggle('active',panel.dataset.profilePanel===profile));
+ });
 });
 </script>
 </body>
