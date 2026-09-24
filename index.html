@@ -18,6 +18,7 @@ a{color:#1d5c86;text-decoration:none}.wrap{max-width:980px;margin:auto;padding:1
 .hero h1{margin:0 0 10px;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.15}.hero p{margin:4px 0;color:#e8eef3}
 .pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.pill{border:1px solid #ffffff55;border-radius:999px;padding:6px 10px;font-size:.85rem}
 .profile-picker{display:flex;gap:8px;overflow:auto;margin:12px 0 8px}.profile-btn{appearance:none;border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:#fff;color:var(--ink);font:inherit;font-size:.88rem;white-space:nowrap;cursor:pointer}.profile-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.profile-panel{display:none}.profile-panel.active{display:block}
+.day-picker{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 0 16px}.day-btn{appearance:none;border:1px solid var(--line);border-radius:12px;padding:9px 7px;background:#fff;color:var(--ink);font:inherit;font-size:.84rem;line-height:1.35;cursor:pointer}.day-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.day-panel{display:none}.day-panel.active{display:block}
 .sticky{position:sticky;top:0;z-index:20;background:#f4f1ebef;backdrop-filter:blur(10px);padding:8px 0;margin:10px 0}
 .nav{display:flex;gap:7px;overflow:auto}.nav a{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 11px;color:var(--ink);font-size:.86rem}
 .sec{background:var(--paper);border:1px solid var(--line);border-radius:19px;padding:20px;margin-top:15px}
@@ -32,7 +33,7 @@ a{color:#1d5c86;text-decoration:none}.wrap{max-width:980px;margin:auto;padding:1
 table{width:100%;border-collapse:collapse;border:1px solid var(--line)}th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f2efe9}
 .check{display:flex;gap:9px;align-items:flex-start;padding:7px 0}.check input{margin-top:5px;transform:scale(1.18)}
 footer{color:var(--muted);font-size:.82rem;margin-top:18px}
-@media(max-width:680px){.grid{grid-template-columns:1fr}.timeline{grid-template-columns:72px 1fr;gap:0 8px}.sec{padding:16px}th,td{font-size:.88rem;padding:8px}}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.timeline{grid-template-columns:72px 1fr;gap:0 8px}.sec{padding:16px}th,td{font-size:.88rem;padding:8px}.day-btn{font-size:.78rem;padding:8px 4px}}
 </style>
 </head>
 <body>
@@ -61,6 +62,13 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 
 <section class="sec" id="flow">
 <h2>🗓️ 9/26–29 전체 일정</h2>
+<div class="day-picker" aria-label="날짜 선택">
+  <button class="day-btn active" type="button" data-day-target="sat" aria-pressed="true">토<br>9/26</button>
+  <button class="day-btn" type="button" data-day-target="sun" aria-pressed="false">일<br>9/27</button>
+  <button class="day-btn" type="button" data-day-target="mon" aria-pressed="false">월<br>9/28</button>
+  <button class="day-btn" type="button" data-day-target="tue" aria-pressed="false">화<br>9/29</button>
+</div>
+<div class="day-panel active" data-day-panel="sat">
 <h3>9/26 토요일 · 도착일</h3>
 <div class="muted"><span class="kind move">이동</span> 교통수단과 이동 구간 &nbsp; <span class="kind stay">머무름</span> 수속·쇼핑·식사처럼 현장에서 보내는 시간</div>
 <div class="timeline">
@@ -157,7 +165,9 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 </div>
 
 <div class="tip"><b>첫날 성공 기준(확정)은 딱 3개:</b> ① 가족 교통 준비 ② 빅카메라 방문 ③ 이치란 체험. 비행 지연이나 입국 대기가 길어져도 이 세 가지만 유지하면 됩니다.</div>
+</div>
 
+<div class="day-panel" data-day-panel="sun">
 <h3>9/27 일요일 · 야구 관람일</h3>
 <div class="grid">
   <div class="card"><b>09:45 · 캐널시티 가볍게 보기</b><br><span class="muted">야나기바시 시장은 일요일 정기휴무라 제외. 캐널시티에서 브런치·분수 구경만 하고, Alpen 쇼핑은 월요일에 여유 있게 진행.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Canal+City+Hakata">캐널시티 지도</a></div></div>
@@ -175,7 +185,9 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
   <div class="time">16:00</div><div class="event"><span class="kind stay">산책</span><div class="title">모모치 해변 → 후쿠오카 타워</div><div class="muted">날씨가 좋으면 해변 산책 후 전망대. 비가 오면 박물관·E·ZO 체류 시간을 늘리고 타워로 바로 이동합니다.</div></div>
   <div class="time">18:00</div><div class="event"><span class="kind move">이동</span><div class="title">텐진으로 이동해 저녁</div><div class="muted">버스로 텐진 이동 → 저녁 식사 → 지하철로 하카타 숙소 복귀.</div><div class="btns"><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Fukuoka+Tower&destination=Tenjin+Station&travelmode=transit">타워→텐진</a></div></div>
 </div>
+</div>
 
+<div class="day-panel" data-day-panel="mon">
 <h3>9/28 월요일 · 시장 · 캐널시티 · 쇼핑</h3>
 <div class="grid">
   <div class="card"><b>09:30 · 야나기바시 연합시장</b><br><span class="muted">일요일 휴무를 피해 월요일 오전으로 배치. 시장을 둘러보고 간식·선물 후보만 가볍게 확인.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Yanagibashi+Rengo+Market">시장 지도</a></div></div>
@@ -183,13 +195,16 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
   <div class="card"><b>13:00 · 텐진 쇼핑</b><br><span class="muted">캐널시티 → 텐진은 도보 약 20분 또는 버스. 아빠 기능성 의류·중고 스포츠용품은 BOOKOFF 미나 텐진을 후보로 둡니다.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=BOOKOFF+SUPER+BAZAAR+Mina+Tenjin">BOOKOFF 지도</a></div></div>
   <div class="card"><b>저녁 · 텐진 또는 하카타</b><br><span class="muted">쇼핑 마무리 시간과 컨디션에 맞춰 가벼운 식사 후 숙소 복귀. Grill Kajin은 월·화 정기휴무라 이번 일정에는 넣지 않았습니다.</span></div>
 </div>
+</div>
 
+<div class="day-panel" data-day-panel="tue">
 <h3>9/29 화요일 · 귀국일</h3>
 <div class="grid">
   <div class="card"><b>06:20 · 기상 · 짐 정리</b><br><span class="muted">여권·항공권·구매품·충전기 최종 확인.</span></div>
   <div class="card"><b>06:50 · 체크아웃</b><br><span class="muted">숙소 → 하카타역 → 후쿠오카공항역. 국제선 터미널은 무료 셔틀버스로 이동.</span></div>
   <div class="card"><b>08:00 전후 · 국제선 수속</b><br><span class="muted">Air Seoul RS724 수속·보안검색·출국심사를 마치고 탑승구로 이동.</span></div>
   <div class="card"><b>09:40 · 후쿠오카 출발</b><br><span class="muted">후쿠오카 → 인천, 11:15 도착 예정.</span></div>
+</div>
 </div>
 </section>
 
@@ -308,6 +323,17 @@ document.querySelectorAll('[data-profile-target]').forEach((button)=>{
   const profile=button.dataset.profileTarget;
   document.querySelectorAll('[data-profile-target]').forEach((item)=>item.classList.toggle('active',item===button));
   document.querySelectorAll('[data-profile-panel]').forEach((panel)=>panel.classList.toggle('active',panel.dataset.profilePanel===profile));
+ });
+});
+document.querySelectorAll('[data-day-target]').forEach((button)=>{
+ button.addEventListener('click',()=>{
+  const day=button.dataset.dayTarget;
+  document.querySelectorAll('[data-day-target]').forEach((item)=>{
+   const selected=item===button;
+   item.classList.toggle('active',selected);
+   item.setAttribute('aria-pressed',selected?'true':'false');
+  });
+  document.querySelectorAll('[data-day-panel]').forEach((panel)=>panel.classList.toggle('active',panel.dataset.dayPanel===day));
  });
 });
 </script>
