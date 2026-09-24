@@ -48,7 +48,7 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 </header>
 
 <div class="sticky"><nav class="nav">
-<a href="#flow">시간표</a><a href="#osmo">오즈모 P4</a><a href="#places">지도</a><a href="#cards">교통카드</a><a href="#food">저녁</a><a href="#backup">플랜B</a>
+<a href="#flow">시간표</a><a href="#people">역할별 일정</a><a href="#osmo">오즈모 P4</a><a href="#places">지도</a><a href="#cards">교통카드</a><a href="#food">저녁</a><a href="#backup">플랜B</a>
 </nav></div>
 
 
@@ -162,12 +162,13 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 </div>
 </section>
 
-<section class="sec" id="shopping">
-<h2>🧥 아빠 쇼핑리스트 · 기능성 의류</h2>
-<div class="note">텐진 쇼핑 일정에서 확인할 품목입니다. 가볍게 휴대하거나 여행 중 온도 변화에 대응할 수 있는 옷 위주로 봅니다.</div>
-<label class="check"><input type="checkbox" data-save><span>컨버터블 팬츠</span></label>
-<label class="check"><input type="checkbox" data-save><span>패커블 패딩</span></label>
-<label class="check"><input type="checkbox" data-save><span>패커블 아우터</span></label>
+<section class="sec" id="people">
+<h2>👨‍👩‍👦 역할별 일정 · 각자 할 일과 쇼핑</h2>
+<div class="grid">
+  <div class="card"><h3>엄마</h3><div class="muted">첫날에는 HAYAKAKEN 준비 후 가족 동선과 컨디션을 함께 확인.</div><h4>쇼핑리스트 · 캐널시티 Alpen</h4><label class="check"><input type="checkbox" data-save><span>수영복·래시가드</span></label><label class="check"><input type="checkbox" data-save><span>수경·수모</span></label><label class="check"><input type="checkbox" data-save><span>수영용 타월·방수 파우치</span></label><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alpen+Fukuoka+Canal+City">Alpen FUKUOKA 지도</a></div></div>
+  <div class="card"><h3>아이들</h3><div class="muted">토·일에는 초등학생 100엔 패스로 지하철 이동. 이동 중에는 다음 장소·간식·휴식 시간을 함께 고르기.</div><h4>할 일</h4><label class="check"><input type="checkbox" data-save><span>100엔 패스 잘 보관하기</span></label><label class="check"><input type="checkbox" data-save><span>PayPay돔·야구 체험 후보 확인</span></label></div>
+  <div class="card"><h3>아빠</h3><div class="muted">빅카메라에서 Osmo Pocket 4 재고·면세 최종가 확인. 없으면 요도바시 하카타로 전환.</div><h4>쇼핑리스트 · 기능성 의류</h4><label class="check"><input type="checkbox" data-save><span>컨버터블 팬츠</span></label><label class="check"><input type="checkbox" data-save><span>패커블 패딩</span></label><label class="check"><input type="checkbox" data-save><span>패커블 아우터</span></label><h4>쇼핑리스트 · 아이·아빠 야구용품</h4><label class="check"><input type="checkbox" data-save><span>아이 야구용품</span></label><label class="check"><input type="checkbox" data-save><span>아빠 야구용품</span></label><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alpen+Fukuoka+Canal+City">Alpen FUKUOKA 지도</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=BOOKOFF+SUPER+BAZAAR+Mina+Tenjin">중고 탐색 지도</a></div></div>
+</div>
 </section>
 
 <section class="sec" id="places">
@@ -177,6 +178,7 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
   <div class="card"><b>이동 거점</b><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+International+Terminal">후쿠오카공항</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Fukuoka+Airport+Station">후쿠오카공항역</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hakata+Station">하카타역</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tenjin+Station">텐진역</a></div></div>
   <div class="card"><b>토요일 핵심</b><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Bic+Camera+Tenjin+2nd+Store">빅카메라 텐진 2호관</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=ICHIRAN+Tenjin+Nishidori">이치란 텐진 니시도리</a></div></div>
   <div class="card"><b>오즈모 P4 백업</b><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Yodobashi+Camera+Multimedia+Hakata">요도바시 하카타</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Air+BicCamera+Fukuoka+Airport+International+Terminal">공항 빅카메라</a></div></div>
+  <div class="card"><b>스포츠 · 중고 탐색</b><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alpen+Fukuoka+Canal+City">Alpen FUKUOKA</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=BOOKOFF+SUPER+BAZAAR+Mina+Tenjin">BOOKOFF 미나 텐진</a></div><div class="muted">새 수영·야구용품은 Alpen, 중고 야구·스포츠·아웃도어 의류는 BookOff 후보. 중고 재고는 방문 전 지도·전화로 확인.</div></div>
   <div class="card"><b>다른 날 후보</b><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kiwamiya+Imaizumi+Fukuoka">極味や 今泉</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hikiniku+to+Kome+Imaizumi">挽肉と米 今泉</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Grill+Kajin+Fukuoka">Grill Kajin</a></div></div>
 </div>
 </section>
