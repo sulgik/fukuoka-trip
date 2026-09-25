@@ -191,6 +191,7 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 <div class="grid">
   <div class="card"><b>09:30 · 야나기바시 연합시장</b><br><span class="muted">일요일 휴무를 피해 월요일 오전으로 배치. 시장을 둘러보고 간식·선물 후보만 가볍게 확인.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Yanagibashi+Rengo+Market">시장 지도</a></div></div>
   <div class="card"><b>10:30 · 캐널시티 Alpen</b><br><span class="muted">엄마 수영용품, 와니·아빠 야구용품을 한 번에 확인. Alpen FUKUOKA는 10:00–21:00.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alpen+Fukuoka+Canal+City">Alpen 지도</a></div></div>
+  <div class="card"><b>11:15 · 와니 옷 쇼핑 · 촉감 우선</b><br><span class="muted"><b>1순위는 캐널시티 1층 Gap/GapKids(갭/갭키즈)</b>: 초5가 직접 입어 보고 면 저지·부드러운 스웨트·허리 밴딩 바지부터 확인. 맞지 않으면 같은 건물 2~3층 Global Work(글로벌 워크)의 키즈 라인으로 이동합니다. 목 뒤 라벨·봉제선·허리 밴딩을 먼저 만져 보고, 팔을 들고 앉아 보며 5분 이상 입어 본 뒤 결정.</span><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=GapKids+Canal+City+Hakata">Gap/GapKids(갭/갭키즈) 지도</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Global+Work+Canal+City+Hakata">Global Work(글로벌 워크) 지도</a></div></div>
   <div class="card"><b>13:00 · 텐진 쇼핑</b><br><span class="muted">캐널시티 → 텐진은 도보 약 20분 또는 버스. 엄마는 미나 텐진 3층 GU(지유)와 라시크 후쿠오카 텐진 Standard Products(스탠다드 프로덕츠)를 우선 방문. 아빠 기능성 의류·중고 스포츠용품은 같은 미나 텐진의 BOOKOFF를 후보로 둡니다.</span><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=GU+Tenjin+Mina+Tenjin">GU 텐진점(ジーユー)</a><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Standard+Products+Lachic+Fukuoka+Tenjin">Standard Products(スタンダードプロダクツ)</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=BOOKOFF+SUPER+BAZAAR+Mina+Tenjin">BOOKOFF 지도</a></div></div>
   <div class="card"><b>16:00 · 오호리 공원(大濠公園)</b><br><span class="muted">월요일 쇼핑 중간에 45~60분 쉬는 시간. 텐진역에서 지하철로 약 5분 이동해 연못 산책로를 한 바퀴 가볍게 걷고, 다시 텐진으로 돌아와 저녁을 먹습니다. 비가 많이 오면 이 단계는 쇼핑·카페 휴식으로 전환.</span><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Ohori+Park+Fukuoka">오호리 공원(大濠公園) 지도</a></div></div>
   <div class="card"><b>저녁 · 텐진 또는 하카타</b><br><span class="muted">쇼핑 마무리 시간과 컨디션에 맞춰 가벼운 식사 후 숙소 복귀. Grill Kajin은 월·화 정기휴무라 이번 일정에는 넣지 않았습니다.</span></div>
@@ -350,11 +351,16 @@ Air Seoul은 인천 출발 시 <b>제2여객터미널(T2)</b>를 이용합니다
 <script>
 const imonneProfileInfo=`<h3>가족 간식 · 이몬네 젤라모찌</h3><div class="note">이몬네(いもんね) 하카타점의 젤라모찌(ジェラ餅®)를 함께 먹기. 하카타역 서쪽 출구 쪽 <b>하카타 마루이 1층</b>, 보통 10:00–21:00.</div><label class="check"><input type="checkbox" data-imonne-save><span>이몬네 젤라모찌 함께 먹기</span></label><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=%E3%81%84%E3%82%82%E3%82%93%E3%81%AD+%E5%8D%9A%E5%A4%9A%E3%83%9E%E3%83%AB%E3%82%A4">이몬네(いもんね) 지도</a></div>`;
 ['mom','dad'].forEach((profile)=>document.querySelector(`[data-profile-panel="${profile}"]`).insertAdjacentHTML('afterbegin',imonneProfileInfo));
+const waniSensoryShopping=`<h3>옷 쇼핑 · 촉감 우선</h3><div class="note"><b>캐널시티 1층 Gap/GapKids(갭/갭키즈)부터.</b> 면 저지·부드러운 스웨트·허리 밴딩 바지를 직접 만져 보고 입어 봅니다. 목 뒤 라벨, 봉제선, 허리 밴딩이 거슬리지 않는지 확인하고, 안 맞으면 Global Work(글로벌 워크) 키즈 라인으로 이동.</div><label class="check"><input type="checkbox" data-wani-sensory-save><span>옷을 5분 이상 입어 보고 촉감 확인</span></label><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=GapKids+Canal+City+Hakata">Gap/GapKids(갭/갭키즈) 지도</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Global+Work+Canal+City+Hakata">Global Work(글로벌 워크) 지도</a></div>`;
+document.querySelector('[data-profile-panel="wani"]').insertAdjacentHTML('beforeend',waniSensoryShopping);
 document.querySelectorAll('[data-imonne-save]').forEach((el,i)=>{
  const k='fukuoka-imonne-'+i;
  el.checked=localStorage.getItem(k)==='1';
  el.addEventListener('change',()=>localStorage.setItem(k,el.checked?'1':'0'));
 });
+const waniSensory=document.querySelector('[data-wani-sensory-save]');
+waniSensory.checked=localStorage.getItem('fukuoka-wani-sensory')==='1';
+waniSensory.addEventListener('change',()=>localStorage.setItem('fukuoka-wani-sensory',waniSensory.checked?'1':'0'));
 const momTenjinList=[...document.querySelectorAll('[data-profile-panel="mom"] h3')].find((heading)=>heading.textContent.includes('쇼핑리스트 · 텐진'));
 momTenjinList.insertAdjacentHTML('beforebegin','<label class="check"><input type="checkbox" data-mom-umbrella-save><span>우양산</span></label>');
 const momUmbrella=document.querySelector('[data-mom-umbrella-save]');
