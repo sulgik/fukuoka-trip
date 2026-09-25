@@ -19,6 +19,7 @@ a{color:#1d5c86;text-decoration:none}.wrap{max-width:980px;margin:auto;padding:1
 .pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.pill{border:1px solid #ffffff55;border-radius:999px;padding:6px 10px;font-size:.85rem}
 .profile-picker{display:flex;gap:8px;overflow:auto;margin:12px 0 8px}.profile-btn{appearance:none;border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:#fff;color:var(--ink);font:inherit;font-size:.88rem;white-space:nowrap;cursor:pointer}.profile-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.profile-panel{display:none}.profile-panel.active{display:block}
 .day-picker{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 0 16px}.day-btn{appearance:none;border:1px solid var(--line);border-radius:12px;padding:9px 7px;background:#fff;color:var(--ink);font:inherit;font-size:.84rem;line-height:1.35;cursor:pointer}.day-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.day-panel{display:none}.day-panel.active{display:block}
+.weather-picker{display:flex;gap:8px;margin:10px 0}.weather-btn{appearance:none;border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#fff;color:var(--ink);font:inherit;font-size:.86rem;cursor:pointer}.weather-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.weather-panel{display:none}.weather-panel.active{display:block}
 .sticky{position:sticky;top:0;z-index:20;background:#f4f1ebef;backdrop-filter:blur(10px);padding:8px 0;margin:10px 0}
 .nav{display:flex;gap:7px;overflow:auto}.nav a{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 11px;color:var(--ink);font-size:.86rem}
 .sec{background:var(--paper);border:1px solid var(--line);border-radius:19px;padding:20px;margin-top:15px}
@@ -70,6 +71,9 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 </div>
 <div class="day-panel active" data-day-panel="sat">
 <h3>9/26 토요일 · 도착일</h3>
+<div class="weather-picker" aria-label="첫날 날씨 선택"><button class="weather-btn active" type="button" data-sat-weather-target="clear" aria-pressed="true">☀️ 비 안 옴</button><button class="weather-btn" type="button" data-sat-weather-target="rain" aria-pressed="false">☔ 비 옴</button></div>
+<div class="weather-panel active note" data-sat-weather-panel="clear"><b>비가 안 오면</b> 저녁 쇼핑 뒤 케고 공원(警固公園)을 15~20분만 산책. 피곤하면 바로 지하철로 숙소 복귀.</div>
+<div class="weather-panel note" data-sat-weather-panel="rain"><b>비가 오면</b> 케고 공원은 빼고 빅카메라·미나 텐진 등 실내 쇼핑 시간을 늘린 뒤 텐진역에서 숙소로 복귀.</div>
 <div class="muted"><span class="kind move">이동</span> 교통수단과 이동 구간 &nbsp; <span class="kind stay">머무름</span> 수속·쇼핑·식사처럼 현장에서 보내는 시간</div>
 <div class="timeline">
 
@@ -121,19 +125,19 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 </div>
 
 <div class="time">19:40±</div>
-<div class="event"><span class="kind stay">머무름 · 쇼핑</span><div class="title">빅카메라 텐진 2호관</div>
-<div class="muted"><b>이치란 대기가 길었을 때:</b> 아빠만 대기 중 빠르게 방문. <b>대기가 짧았을 때:</b> 가족이 함께 식사한 뒤 전원 이동합니다. Osmo Pocket 4 재고·면세 최종가 확인이 목적입니다.</div>
+<div class="event"><span class="kind stay">머무름 · 쇼핑</span><div class="title">저녁 뒤 · 빅카메라 텐진 2호관부터 가족 쇼핑</div>
+<div class="muted"><b>이치란 대기가 길었을 때:</b> 아빠만 대기 중 빠르게 방문. <b>대기가 짧았을 때:</b> 가족이 함께 식사한 뒤 전원 이동합니다. Osmo Pocket 4 재고·면세 최종가를 확인하고, 가족 쇼핑을 이어갑니다.</div>
 <span class="route">🛍 30~45분</span>
 <div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Bic+Camera+Tenjin+2nd+Store">빅카메라 지도</a></div>
 </div>
 
 <div class="time">20:30±</div>
-<div class="event"><span class="kind stay">머무름 · 짧은 산책</span><div class="title">케고 공원(警固公園) · 텐진 야간 분위기 한 바퀴</div>
-<div class="muted">빅카메라 뒤에는 케고 공원과 텐진 중심가를 20~30분만 둘러보고 편의점에서 다음 날 간식·물 보충. 아이들 컨디션이 떨어지면 이 단계는 바로 생략합니다.</div>
-<div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kego+Park+Fukuoka">케고 공원(警固公園) 지도</a></div>
+<div class="event"><span class="kind stay">머무름 · 쇼핑 + 산책</span><div class="title">텐진에서 쇼핑 더 하기 · 날씨 따라 마무리</div>
+<div class="muted">엄마는 우양산·GU(지유)·Standard Products(스탠다드 프로덕츠), 아빠는 기능성 의류를 가볍게 확인. 맑으면 케고 공원(警固公園)을 15~20분, 비면 실내 쇼핑으로 대체합니다. 아이들 컨디션이 떨어지면 이 단계는 바로 생략.</div>
+<div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kego+Park+Fukuoka">케고 공원(警固公園) 지도</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mina+Tenjin">미나 텐진 지도</a></div>
 </div>
 
-<div class="time">21:10</div>
+<div class="time">21:30</div>
 <div class="event"><span class="kind move">이동 · 지하철 + 도보</span><div class="title">숙소 복귀 예상</div>
 <div class="muted">텐진역 → 하카타역은 약 6분. 다음 날을 위해 첫날은 여기서 종료합니다.</div>
 </div>
@@ -348,6 +352,11 @@ document.querySelectorAll('[data-imonne-save]').forEach((el,i)=>{
  el.checked=localStorage.getItem(k)==='1';
  el.addEventListener('change',()=>localStorage.setItem(k,el.checked?'1':'0'));
 });
+const momTenjinList=[...document.querySelectorAll('[data-profile-panel="mom"] h3')].find((heading)=>heading.textContent.includes('쇼핑리스트 · 텐진'));
+momTenjinList.insertAdjacentHTML('beforebegin','<label class="check"><input type="checkbox" data-mom-umbrella-save><span>우양산</span></label>');
+const momUmbrella=document.querySelector('[data-mom-umbrella-save]');
+momUmbrella.checked=localStorage.getItem('fukuoka-mom-umbrella')==='1';
+momUmbrella.addEventListener('change',()=>localStorage.setItem('fukuoka-mom-umbrella',momUmbrella.checked?'1':'0'));
 document.querySelectorAll('[data-save]').forEach((el,i)=>{
  const k='fukuoka-sat-v5-'+i;
  el.checked=localStorage.getItem(k)==='1';
@@ -369,6 +378,17 @@ document.querySelectorAll('[data-day-target]').forEach((button)=>{
    item.setAttribute('aria-pressed',selected?'true':'false');
   });
   document.querySelectorAll('[data-day-panel]').forEach((panel)=>panel.classList.toggle('active',panel.dataset.dayPanel===day));
+ });
+});
+document.querySelectorAll('[data-sat-weather-target]').forEach((button)=>{
+ button.addEventListener('click',()=>{
+  const weather=button.dataset.satWeatherTarget;
+  document.querySelectorAll('[data-sat-weather-target]').forEach((item)=>{
+   const selected=item===button;
+   item.classList.toggle('active',selected);
+   item.setAttribute('aria-pressed',selected?'true':'false');
+  });
+  document.querySelectorAll('[data-sat-weather-panel]').forEach((panel)=>panel.classList.toggle('active',panel.dataset.satWeatherPanel===weather));
  });
 });
 </script>
