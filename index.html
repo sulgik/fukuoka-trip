@@ -71,9 +71,6 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 </div>
 <div class="day-panel active" data-day-panel="sat">
 <h3>9/26 토요일 · 도착일</h3>
-<div class="weather-picker" aria-label="첫날 날씨 선택"><button class="weather-btn active" type="button" data-sat-weather-target="clear" aria-pressed="true">☀️ 비 안 옴</button><button class="weather-btn" type="button" data-sat-weather-target="rain" aria-pressed="false">☔ 비 옴</button></div>
-<div class="weather-panel active note" data-sat-weather-panel="clear"><b>비가 안 오면</b> 텐진 상점가를 걸어서 이동하며 쇼핑을 이어간 뒤 텐진역에서 숙소로 복귀. <b>첫날 공원 일정은 넣지 않습니다.</b></div>
-<div class="weather-panel note" data-sat-weather-panel="rain"><b>비가 오면</b> 빅카메라·미나 텐진 등 실내 쇼핑 시간을 늘린 뒤 텐진역에서 숙소로 복귀. <b>첫날 공원 일정은 넣지 않습니다.</b></div>
 <div class="muted"><span class="kind move">이동</span> 교통수단과 이동 구간 &nbsp; <span class="kind stay">머무름</span> 수속·쇼핑·식사처럼 현장에서 보내는 시간</div>
 <div class="timeline">
 
@@ -409,17 +406,6 @@ document.querySelectorAll('[data-day-target]').forEach((button)=>{
    item.setAttribute('aria-pressed',selected?'true':'false');
   });
   document.querySelectorAll('[data-day-panel]').forEach((panel)=>panel.classList.toggle('active',panel.dataset.dayPanel===day));
- });
-});
-document.querySelectorAll('[data-sat-weather-target]').forEach((button)=>{
- button.addEventListener('click',()=>{
-  const weather=button.dataset.satWeatherTarget;
-  document.querySelectorAll('[data-sat-weather-target]').forEach((item)=>{
-   const selected=item===button;
-   item.classList.toggle('active',selected);
-   item.setAttribute('aria-pressed',selected?'true':'false');
-  });
-  document.querySelectorAll('[data-sat-weather-panel]').forEach((panel)=>panel.classList.toggle('active',panel.dataset.satWeatherPanel===weather));
  });
 });
 document.querySelectorAll('[data-weather-day-target]').forEach((button)=>{
