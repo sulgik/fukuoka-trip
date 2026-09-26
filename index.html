@@ -18,7 +18,7 @@ a{color:#1d5c86;text-decoration:none}.wrap{max-width:980px;margin:auto;padding:1
 .hero h1{margin:0 0 10px;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.15}.hero p{margin:4px 0;color:#e8eef3}
 .pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.pill{border:1px solid #ffffff55;border-radius:999px;padding:6px 10px;font-size:.85rem}
 .profile-picker{display:flex;gap:8px;overflow:auto;margin:12px 0 8px}.profile-btn{appearance:none;border:1px solid var(--line);border-radius:999px;padding:9px 14px;background:#fff;color:var(--ink);font:inherit;font-size:.88rem;white-space:nowrap;cursor:pointer}.profile-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.profile-panel{display:none}.profile-panel.active{display:block}
-.day-picker{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 0 16px}.day-btn{appearance:none;border:1px solid var(--line);border-radius:12px;padding:9px 7px;background:#fff;color:var(--ink);font:inherit;font-size:.84rem;line-height:1.35;cursor:pointer}.day-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.day-panel{display:none}.day-panel.active{display:block}
+.day-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:12px 0 16px}.day-btn{appearance:none;border:1px solid var(--line);border-radius:12px;padding:9px 7px;background:#fff;color:var(--ink);font:inherit;font-size:.84rem;line-height:1.35;cursor:pointer}.day-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.day-panel{display:none}.day-panel.active{display:block}.day-btn[data-day-target="sat"],.day-panel[data-day-panel="sat"],#backup{display:none!important}
 .weather-picker{display:flex;gap:8px;margin:10px 0}.weather-btn{appearance:none;border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#fff;color:var(--ink);font:inherit;font-size:.86rem;cursor:pointer}.weather-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}.weather-panel{display:none}.weather-panel.active{display:block}
 .sticky{position:sticky;top:0;z-index:20;background:#f4f1ebef;backdrop-filter:blur(10px);padding:8px 0;margin:10px 0}
 .nav{display:flex;gap:7px;overflow:auto}.nav a{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 11px;color:var(--ink);font-size:.86rem}
@@ -57,19 +57,18 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 </div>
 
 <div class="sticky"><nav class="nav">
-<a href="#flow">전체 일정</a><a href="#weather">날씨·준비</a><a href="#people">내 일정</a><a href="#japanese">일본어</a><a href="#places">지도</a><a href="#cards">교통카드</a><a href="#food">식사</a><a href="#backup">플랜B</a>
+<a href="#flow">전체 일정</a><a href="#weather">날씨·준비</a><a href="#people">내 일정</a><a href="#japanese">일본어</a><a href="#places">지도</a><a href="#cards">교통카드</a><a href="#food">식사</a>
 </nav></div>
 
 
 <section class="sec" id="flow">
 <h2>🗓️ 9/26–29 전체 일정</h2>
 <div class="day-picker" aria-label="날짜 선택">
-  <button class="day-btn active" type="button" data-day-target="sat" aria-pressed="true">토<br>9/26</button>
-  <button class="day-btn" type="button" data-day-target="sun" aria-pressed="false">일<br>9/27</button>
+  <button class="day-btn active" type="button" data-day-target="sun" aria-pressed="true">일<br>9/27</button>
   <button class="day-btn" type="button" data-day-target="mon" aria-pressed="false">월<br>9/28</button>
   <button class="day-btn" type="button" data-day-target="tue" aria-pressed="false">화<br>9/29</button>
 </div>
-<div class="day-panel active" data-day-panel="sat">
+<div class="day-panel" data-day-panel="sat">
 <h3>9/26 토요일 · 도착일</h3>
 <div class="muted"><span class="kind move">이동</span> 교통수단과 이동 구간 &nbsp; <span class="kind stay">머무름</span> 수속·쇼핑·식사처럼 현장에서 보내는 시간</div>
 <div class="timeline">
@@ -137,46 +136,57 @@ footer{color:var(--muted);font-size:.82rem;margin-top:18px}
 <div class="tip"><b>첫날 성공 기준(확정)은 딱 3개:</b> ① 가족 교통 준비 ② 빅카메라 방문 ③ 이치란 체험. 비행 지연이나 입국 대기가 길어져도 이 세 가지만 유지하면 됩니다.</div>
 </div>
 
-<div class="day-panel" data-day-panel="sun">
+<div class="day-panel active" data-day-panel="sun">
 <h3>9/27 일요일 · 야구 관람일</h3>
+<div class="note"><b>📌 오늘 확정 일정:</b> 20:15 텐진 출발 후쿠오카 버스투어를 예약했습니다. 야구 관람 여부와 관계없이 <b>20:00까지 텐진 집결지 도착</b>을 목표로 잡습니다.</div>
 <div class="weather-picker" aria-label="일요일 날씨 선택"><button class="weather-btn active" type="button" data-weather-day-target="sun" data-weather-target="clear" aria-pressed="true">☀️ 비 안 옴</button><button class="weather-btn" type="button" data-weather-day-target="sun" data-weather-target="rain" aria-pressed="false">☔ 비 옴</button></div>
 <div class="weather-panel active note" data-weather-day-panel="sun" data-weather-panel="clear"><b>맑음 플랜:</b> 야구 뒤 모모치 해변과 후쿠오카 타워로 이어갑니다.</div>
 <div class="weather-panel note" data-weather-day-panel="sun" data-weather-panel="rain"><b>비 플랜:</b> 야구 뒤 돔 옆 BOSS E·ZO(보스 이조) 실내 체험으로 전환합니다.</div>
 <div class="grid">
-  <div class="card"><b>09:45 · 캐널시티 가볍게 보기</b><br><span class="muted">야나기바시 시장은 일요일 정기휴무라 제외. 캐널시티에서 브런치·분수 구경만 하고, Alpen 쇼핑은 월요일에 여유 있게 진행.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Canal+City+Hakata">캐널시티 지도</a></div></div>
-  <div class="card"><b>11:15 · PayPay돔으로 이동</b><br><span class="muted">캐널시티/하카타에서 돔 방향 버스를 우선 확인. 일행과 짐이 있으면 환승 없는 버스가 편합니다.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Canal+City+Hakata&destination=Mizuho+PayPay+Dome+Fukuoka&travelmode=transit">캐널시티→돔</a></div></div>
-  <div class="card"><b>12:00 · 입장 · 체험</b><br><span class="muted">개장 뒤 89 Park(89パーク)·구장 먹거리·기념품을 먼저 보고 좌석으로 이동. 89 Park은 돔 내부가 아니라 <b>돔 바로 옆 별도 건물 BOSS E·ZO(보스 이조) 4층</b>에 있습니다.</span></div>
-  <div class="card"><b>89 Park · 야구 체험 가격</b><br><span class="muted">타격·투구·수비·주루·캐치볼 체험. 현재 16세 이상 1,000엔, 15세 이하 500엔, 6세 이하는 무료(보호자 유료)입니다. 경기표를 못 구했을 때도 방문 가능한 야구 Plan B입니다.</span><div class="btns"><a class="btn" href="https://e-zofukuoka.com/obm/89park/">89 Park 공식 안내</a></div></div>
+  <div class="card"><b>08:00 · 아침</b><br><span class="muted">후르츠 산도를 사 와서 숙소에서 편하게 먹기. 물·커피/우유도 함께 챙깁니다.</span></div>
+  <div class="card"><b>09:10 · 숙소에서 출발</b><br><span class="muted">커낼시티는 먼저 들르지 않고 PayPay돔으로 바로 이동합니다. 버스 지연과 매표소 위치 확인 시간을 포함해 10:15 도착이 목표입니다.</span><div class="btns"><a class="btn primary" href="https://www.google.com/maps/dir/?api=1&destination=Mizuho+PayPay+Dome+Fukuoka&travelmode=transit">현재 위치→PayPay돔</a></div></div>
+  <div class="card"><b>10:15 · 7번 매표소 도착</b><br><span class="muted">7번 게이트 옆 현장 매표소에서 줄을 섭니다. 4연석 우선, 없으면 2+2 좌석까지 가능한지 가족끼리 미리 결정합니다.</span></div>
+  <div class="card"><b>10:30 · 현장 티켓 구매</b><br><span class="muted">빈 좌석이 있을 때만 판매합니다. 카드·PayPay 등 캐시리스 결제를 준비하고, 4연석 여부를 먼저 확인합니다.</span><div class="btns"><a class="btn" href="https://faq.softbankhawks.co.jp/faq/show/386?category_id=35&site_domain=open">현장 매표소 공식 안내</a></div></div>
+  <div class="card"><b>11:00 · 표를 샀을 때</b><br><span class="muted">돔·MARK IS 주변에서 점심을 먹고 굿즈와 E·ZO를 가볍게 봅니다. 12:00 개장에 맞춰 입장하므로 커낼시티 점심은 가지 않습니다.</span></div>
+  <div class="card"><b>12:00 · 입장</b><br><span class="muted">구장 먹거리·기념품을 먼저 보고 좌석으로 이동합니다. 89 Park은 돔 내부가 아니라 <b>돔 바로 옆 BOSS E·ZO 4층</b>에 있습니다.</span></div>
   <div class="card"><b>14:00 · 호크스 vs 오릭스</b><br><span class="muted">중村晃(나카무라 아키라) 선수 은퇴 세리머니가 예정된 경기. 6~7회 무렵(16:15 전후)에 나오면 퇴장 혼잡을 크게 줄일 수 있습니다.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mizuho+PayPay+Dome+Fukuoka">PayPay돔 지도</a></div></div>
   <div class="card" data-weather-card="sun" data-weather-card-value="clear"><b>16:30 · 모모치</b><br><span class="muted">돔 → 모모치 해변 산책 → 후쿠오카 타워. 타워 전망은 약 45분이면 충분하고 22:00까지 운영합니다.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Mizuho+PayPay+Dome+Fukuoka&destination=Fukuoka+Tower&travelmode=walking">돔→후쿠오카 타워</a></div></div>
   <div class="card" data-weather-card="sun" data-weather-card-value="rain" hidden><b>16:30 · BOSS E·ZO(보스 이조)</b><br><span class="muted">돔 옆 BOSS E·ZO(보스 이조)에서 야구 박물관·체험 시설 중 하나만 선택. 종료 후 텐진 또는 하카타에서 저녁.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=BOSS+E+ZO+Fukuoka">BOSS E·ZO(보스 이조) 지도</a></div></div>
-  <div class="card"><b>18:30 · 저녁 · 숙소 복귀</b><br><span class="muted">모모치에서 바로 귀환하거나, 컨디션이 좋으면 텐진에서 저녁 후 지하철로 하카타 복귀.</span></div>
+  <div class="card"><b>18:30 · 텐진에서 이른 저녁</b><br><span class="muted">야구·모모치 일정 뒤에는 텐진에서 가볍게 저녁을 먹고, 20:00까지 버스투어 집결지로 이동합니다. <b>빅카메라 텐진 2호관 근처를 자연스럽게 지날 때만</b> 결제수단 변경을 처리하고, 별도 우회는 하지 않습니다.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Bic+Camera+Tenjin+2nd+Store">빅카메라 텐진 2호관 지도</a></div></div>
+  <div class="card"><b>20:00 · 텐진 집결지 도착</b><br><span class="muted">예약 화면과 집결 장소를 확인하고 화장실을 다녀옵니다. 20:15 출발이므로 늦어도 20:00에는 도착.</span></div>
+  <div class="card"><b>20:15 · 예약 확정 버스투어</b><br><span class="muted">텐진 출발 후쿠오카 버스투어. 야구를 보든 못 보든 오늘 저녁의 고정 일정입니다.</span></div>
 </div>
-<div class="warn"><b>🎫 야구 현장표가 없을 때 · Plan B</b><br>돔까지 이동한 뒤 표를 구하지 못해도 모모치 권역에서 그대로 하루를 이어갑니다.</div>
+<div class="warn"><b>🎫 10:30에 표를 못 구했을 때 · 오늘의 Plan B</b><br>매표소에서 오래 기다리지 않고 10:45 전후 커낼시티로 이동합니다. 점심과 중앙권 일정을 즐긴 뒤 20:15 텐진 버스투어로 마무리합니다.</div>
 <div class="timeline">
-  <div class="time">12:00</div><div class="event"><span class="kind stay">실내 체험</span><div class="title">BOSS E·ZO(보스 이조)에서 하나만 선택</div><div class="muted">왕정치 베이스볼 뮤지엄·89 Park 또는 팀랩 포레스트 중 가족이 원하는 곳 하나. E·ZO 당일권은 잔여 수량이 있을 때만 판매하므로 온라인 재고를 먼저 확인합니다.</div><div class="btns"><a class="btn" href="https://e-zofukuoka.com/ticket/how/">E·ZO(보스 이조) 티켓 확인</a></div></div>
-  <div class="time">14:00</div><div class="event"><span class="kind stay">관람</span><div class="title">후쿠오카시 박물관</div><div class="muted">E·ZO도 매진이면 바로 전환. 17:30까지 운영하며 중학생 이하는 상설전 무료라 가족 Plan B로 부담이 적습니다.</div><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Fukuoka+City+Museum">박물관 지도</a></div></div>
-  <div class="time">16:00</div><div class="event"><span class="kind stay">산책</span><div class="title">모모치 해변 → 후쿠오카 타워</div><div class="muted">날씨가 좋으면 해변 산책 후 전망대. 비가 오면 박물관·E·ZO 체류 시간을 늘리고 타워로 바로 이동합니다.</div></div>
-  <div class="time">18:00</div><div class="event"><span class="kind move">이동</span><div class="title">텐진으로 이동해 저녁</div><div class="muted">버스로 텐진 이동 → 저녁 식사 → 지하철로 하카타 숙소 복귀.</div><div class="btns"><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Fukuoka+Tower&destination=Tenjin+Station&travelmode=transit">타워→텐진</a></div></div>
+  <div class="time">10:45</div><div class="event"><span class="kind move">이동</span><div class="title">PayPay돔 → 커낼시티</div><div class="muted">현장표가 없으면 바로 중앙권으로 돌아옵니다. 이동 중 점심 대기시간을 확인합니다.</div><div class="btns"><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Mizuho+PayPay+Dome+Fukuoka&destination=Canal+City+Hakata&travelmode=transit">돔→커낼시티</a></div></div>
+  <div class="time">11:30</div><div class="event"><span class="kind stay">점심</span><div class="title">커낼시티 B1F · 노코 우동 제조소</div><div class="muted">후르츠 산도 아침 뒤 따뜻하고 부담 적은 우동으로 점심. 아이들은 기본 우동·주먹밥, 어른은 고기우동이나 튀김을 곁들입니다. 줄이 길면 같은 B1F의 포무노키 오므라이스로 전환합니다.</div><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Noko+Udon+Canal+City+Hakata">노코 우동 지도</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Pomunoki+Canal+City+Hakata">포무노키 지도</a></div></div>
+  <div class="time">12:30</div><div class="event"><span class="kind stay">관람 · 쇼핑</span><div class="title">커낼시티 여유 일정</div><div class="muted">분수쇼와 필요한 매장만 보고 쉽니다. Alpen 쇼핑은 월요일 일정이 있으므로 오늘 무리해서 넣지 않습니다.</div></div>
+  <div class="time">16:00</div><div class="event"><span class="kind move">이동</span><div class="title">텐진으로 이동</div><div class="muted">텐진 쇼핑·카페·이른 저녁. 빅카메라 2호관 근처를 자연스럽게 지날 때만 결제수단 변경을 처리합니다.</div><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Bic+Camera+Tenjin+2nd+Store">빅카메라 2호관 지도</a></div></div>
+  <div class="time">19:00</div><div class="event"><span class="kind stay">분수쇼</span><div class="title">커낼시티 · 건담 아쿠아 파노라마</div><div class="muted">약 10분 쇼. 관람 뒤 바로 텐진으로 이동해 버스투어 집결 시간을 지킵니다. 혼잡·비·이동 지연이면 이 단계는 생략하고 텐진에서 저녁 또는 카페 휴식으로 전환합니다.</div><div class="btns"><a class="btn" href="https://canalcity.co.jp/event/detail/40?hold_calendar=&publish_begin=26-03-10&publish_end=">분수쇼 공식 시간</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Canal+City+Hakata&destination=Tenjin+Station&travelmode=transit">커낼시티→텐진</a></div></div>
+  <div class="time">20:00</div><div class="event"><span class="kind move">이동 · 집결</span><div class="title">텐진 버스투어 집결지 도착</div><div class="muted">예약한 <b>20:15 출발</b> 전, 집결 장소·예약 화면·화장실을 확인합니다. 커낼시티에서 출발할 때는 19:25 전후로 이동을 시작하는 편이 안전합니다.</div></div>
+  <div class="time">20:15</div><div class="event"><span class="kind stay">예약 확정</span><div class="title">후쿠오카 버스투어 출발</div><div class="muted">야구를 못 봐도 오늘의 고정 하이라이트로 마무리합니다.</div></div>
 </div>
 </div>
 
 <div class="day-panel" data-day-panel="mon">
-<h3>9/28 월요일 · 시장 · 캐널시티 · 쇼핑</h3>
+<h3>9/28 월요일 · 시장 · 캐널시티 · E·ZO</h3>
 <div class="weather-picker" aria-label="월요일 날씨 선택"><button class="weather-btn active" type="button" data-weather-day-target="mon" data-weather-target="clear" aria-pressed="true">☀️ 비 안 옴</button><button class="weather-btn" type="button" data-weather-day-target="mon" data-weather-target="rain" aria-pressed="false">☔ 비 옴</button></div>
-<div class="weather-panel active note" data-weather-day-panel="mon" data-weather-panel="clear"><b>맑음 플랜:</b> 하카타 문화 산책을 정상 진행하고, 오후에는 오호리 공원(大濠公園)까지 갑니다.</div>
-<div class="weather-panel note" data-weather-day-panel="mon" data-weather-panel="rain"><b>비 플랜:</b> 신사·마치야 관람은 짧게 하고, 카와바타·캐널시티·텐진의 실내 쇼핑과 카페 휴식 비중을 늘립니다. 오호리 공원은 가지 않습니다.</div>
+<div class="weather-panel active note" data-weather-day-panel="mon" data-weather-panel="clear"><b>월요일 분산 원칙:</b> 주말에 붐비는 캐널시티 쇼핑과 E·ZO 체험을 월요일로 이동하고, 마지막에 오호리 공원을 걷습니다.</div>
+<div class="weather-panel note" data-weather-day-panel="mon" data-weather-panel="rain"><b>비 플랜:</b> 캐널시티와 E·ZO 실내 체험을 그대로 진행하고 오호리 공원만 생략합니다.</div>
 <div class="grid">
   <div class="card"><b>09:30 · 야나기바시 연합시장</b><br><span class="muted">일요일 휴무를 피해 월요일 오전으로 배치. 30분만 둘러보고 간식·선물 후보를 가볍게 확인.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Yanagibashi+Rengo+Market">시장 지도</a></div></div>
   <div class="card"><b>10:10 · 쿠시다 신사(櫛田神社)</b><br><span class="muted">하카타의 대표 신사. 손 씻기 → 두 번 절 → 두 번 박수 → 소원 → 한 번 절로 짧게 참배하고, 야마카사 장식을 봅니다.</span><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Kushida+Shrine+Fukuoka">쿠시다 신사 지도</a></div></div>
-  <div class="card"><b>10:35 · 하카타 마치야 후루사토관(博多町家ふるさと館)</b><br><span class="muted">옛 하카타의 생활·전통공예·야마카사를 보는 25분 코스. 당일 가능한 말차·종이접기·서예 체험이 있으면 하나만 선택합니다.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hakata+Machiya+Furusatokan">마치야 후루사토관 지도</a></div></div>
-  <div class="card"><b>11:05 · 카와바타 상점가(川端通商店街)</b><br><span class="muted">관광지만이 아닌 실제 하카타 상점가를 20분 정도 걸으며 간식·생활 상점 분위기를 봅니다. 이후 캐널시티로 도보 이동.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kawabata+Shopping+Arcade+Fukuoka">카와바타 상점가 지도</a></div></div>
+  <div class="card"><b>10:35 · 카와바타 상점가</b><br><span class="muted">하카타 마치야 후루사토관은 제4월요일 휴관이므로 제외. 상점가를 20분 정도 걷고 캐널시티로 이동합니다.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kawabata+Shopping+Arcade+Fukuoka">카와바타 상점가 지도</a></div></div>
+  <div class="card"><b>11:10 · 캐널시티 도착</b><br><span class="muted">주말보다 한결 여유로운 월요일에 필요한 매장과 분수쇼를 묶어서 봅니다.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Canal+City+Hakata">캐널시티 지도</a></div></div>
   <div class="card"><b>11:30 · 캐널시티 Alpen</b><br><span class="muted">엄마 수영용품, 와니·아빠 야구용품을 한 번에 확인. Alpen FUKUOKA는 10:00–21:00.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alpen+Fukuoka+Canal+City">Alpen 지도</a></div></div>
   <div class="card"><b>12:15 · 와니 옷 쇼핑 · 촉감 우선</b><br><span class="muted"><b>1순위는 캐널시티 1층 Gap/GapKids(갭/갭키즈)</b>: 초5가 직접 입어 보고 면 저지·부드러운 스웨트·허리 밴딩 바지부터 확인. 맞지 않으면 같은 건물 2~3층 Global Work(글로벌 워크)의 키즈 라인으로 이동합니다. 목 뒤 라벨·봉제선·허리 밴딩을 먼저 만져 보고, 팔을 들고 앉아 보며 5분 이상 입어 본 뒤 결정.</span><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=GapKids+Canal+City+Hakata">Gap/GapKids(갭/갭키즈) 지도</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Global+Work+Canal+City+Hakata">Global Work(글로벌 워크) 지도</a></div></div>
-  <div class="card"><b>13:30 · 텐진 쇼핑</b><br><span class="muted">캐널시티 → 텐진은 도보 약 20분 또는 버스. 엄마는 미나 텐진 3층 GU(지유)와 라시크 후쿠오카 텐진 Standard Products(스탠다드 프로덕츠)를 우선 방문. 아빠 기능성 의류·중고 스포츠용품은 같은 미나 텐진의 BOOKOFF를 후보로 둡니다.</span><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=GU+Tenjin+Mina+Tenjin">GU 텐진점(ジーユー)</a><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Standard+Products+Lachic+Fukuoka+Tenjin">Standard Products(スタンダードプロダクツ)</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=BOOKOFF+SUPER+BAZAAR+Mina+Tenjin">BOOKOFF 지도</a></div></div>
-  <div class="card" data-weather-card="mon" data-weather-card-value="clear"><b>16:30 · 오호리 공원(大濠公園)</b><br><span class="muted">월요일 쇼핑 중간에 45~60분 쉬는 시간. 텐진역에서 지하철로 약 5분 이동해 연못 산책로를 한 바퀴 가볍게 걷고, 다시 텐진으로 돌아와 저녁을 먹습니다.</span><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Ohori+Park+Fukuoka">오호리 공원(大濠公園) 지도</a></div></div>
-  <div class="card" data-weather-card="mon" data-weather-card-value="rain" hidden><b>16:30 · 텐진 실내 휴식</b><br><span class="muted">오호리 공원 대신 미나 텐진·라시크 등 실내 쇼핑을 이어가거나 카페에서 45~60분 쉬어 갑니다.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mina+Tenjin">미나 텐진 지도</a></div></div>
-  <div class="card"><b>저녁 · 텐진 또는 하카타</b><br><span class="muted">쇼핑 마무리 시간과 컨디션에 맞춰 가벼운 식사 후 숙소 복귀. Grill Kajin은 월·화 정기휴무라 이번 일정에는 넣지 않았습니다.</span></div>
+  <div class="card"><b>12:45 · 캐널시티 점심</b><br><span class="muted">노코 우동을 우선 선택하고, 줄이 길면 포무노키 오므라이스로 전환합니다.</span></div>
+  <div class="card"><b>14:00 · 캐널시티 → BOSS E·ZO</b><br><span class="muted">주말 경기 인파를 피해 월요일 오후에 이동합니다. 15:00 전후 도착을 목표로 합니다.</span><div class="btns"><a class="btn primary" href="https://www.google.com/maps/dir/?api=1&origin=Canal+City+Hakata&destination=BOSS+E-ZO+Fukuoka&travelmode=transit">캐널시티→E·ZO</a></div></div>
+  <div class="card"><b>15:00 · 부모·아이 2팀으로 분리</b><br><span class="muted"><b>동생+부모 1명:</b> 4층 89 Park 야구 체험. <b>형+부모 1명:</b> 6층 V-World 30분. 12세 이하라면 보호자가 동행해야 합니다. 16:00에 4층 입구에서 합류합니다.</span><div class="btns"><a class="btn" href="https://e-zofukuoka.com/obm/89park/">89 Park</a><a class="btn" href="https://e-zofukuoka.com/v-world">V-World</a></div></div>
+  <div class="card"><b>팀랩을 고르면 · 가족 함께 1시간</b><br><span class="muted">팀랩 포레스트는 벽과 바닥의 동물·공룡을 스마트폰으로 잡아 도감을 만들고, 몸을 움직이며 디지털 작품에 참여하는 체험형 미술관입니다. 야구/V-World 분리 대신 가족 모두 함께 할 때 선택합니다.</span><div class="btns"><a class="btn" href="https://e-zofukuoka.com/teamlabforest/">팀랩 공식 안내</a></div></div>
+  <div class="card" data-weather-card="mon" data-weather-card-value="clear"><b>17:15 · 오호리 공원</b><br><span class="muted">E·ZO 체험 뒤 텐진 방향으로 돌아오며 45분 정도 산책합니다. 피곤하면 생략합니다.</span><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Ohori+Park+Fukuoka">오호리 공원 지도</a></div></div>
+  <div class="card" data-weather-card="mon" data-weather-card-value="rain" hidden><b>17:15 · 텐진으로 바로 이동</b><br><span class="muted">비가 오면 오호리 공원을 생략하고 텐진 실내 쇼핑으로 이동합니다.</span></div>
+  <div class="card"><b>18:30 · 텐진 쇼핑 · 저녁</b><br><span class="muted">GU·Standard Products·BOOKOFF 중 필요한 곳만 선택합니다. 빅카메라 2호관 근처를 지날 때만 결제수단 변경을 처리하고 별도 우회는 하지 않습니다.</span><div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Bic+Camera+Tenjin+2nd+Store">빅카메라 2호관</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mina+Tenjin">미나 텐진</a></div></div>
 </div>
 </div>
 
@@ -328,7 +338,7 @@ Air Seoul은 인천 출발 시 <b>제2여객터미널(T2)</b>를 이용합니다
 </section>
 
 <footer>
-토요일 동선은 2026-09-24 확인 기준 공식 영업시간·교통 안내를 반영. 실제 입국 소요시간과 혼잡도에 따라 15~30분 정도 유동적으로 움직이는 전제입니다.
+오늘 일정은 현장 혼잡도와 날씨에 따라 15~30분 정도 유동적으로 움직입니다. 고정 일정은 20:15 텐진 출발 버스투어입니다.
 </footer>
 </div>
 
