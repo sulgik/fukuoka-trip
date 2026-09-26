@@ -343,6 +343,10 @@ Air Seoul은 인천 출발 시 <b>제2여객터미널(T2)</b>를 이용합니다
 </div>
 
 <script>
+if(!location.hash){
+ history.scrollRestoration='manual';
+ requestAnimationFrame(()=>document.getElementById('flow').scrollIntoView({block:'start'}));
+}
 const imonneProfileInfo=`<h3>가족 간식 · 이몬네 젤라모찌</h3><div class="note">이몬네(いもんね) 하카타점의 젤라모찌(ジェラ餅®)를 함께 먹기. 하카타역 서쪽 출구 쪽 <b>하카타 마루이 1층</b>, 보통 10:00–21:00.</div><label class="check"><input type="checkbox" data-imonne-save><span>이몬네 젤라모찌 함께 먹기</span></label><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=%E3%81%84%E3%82%82%E3%82%93%E3%81%AD+%E5%8D%9A%E5%A4%9A%E3%83%9E%E3%83%AB%E3%82%A4">이몬네(いもんね) 지도</a></div>`;
 ['mom','dad'].forEach((profile)=>document.querySelector(`[data-profile-panel="${profile}"]`).insertAdjacentHTML('afterbegin',imonneProfileInfo));
 const waniSensoryShopping=`<h3>옷 쇼핑 · 촉감 우선</h3><div class="note"><b>캐널시티 1층 Gap/GapKids(갭/갭키즈)부터.</b> 면 저지·부드러운 스웨트·허리 밴딩 바지를 직접 만져 보고 입어 봅니다. 목 뒤 라벨, 봉제선, 허리 밴딩이 거슬리지 않는지 확인하고, 안 맞으면 Global Work(글로벌 워크) 키즈 라인으로 이동.</div><label class="check"><input type="checkbox" data-wani-sensory-save><span>옷을 5분 이상 입어 보고 촉감 확인</span></label><div class="btns"><a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=GapKids+Canal+City+Hakata">Gap/GapKids(갭/갭키즈) 지도</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Global+Work+Canal+City+Hakata">Global Work(글로벌 워크) 지도</a></div>`;
